@@ -1,48 +1,28 @@
-// Define the Student interface
-interface Student {
-  firstName: string;
-  lastName: string;
-  age: number;
-  location: string;
-}
+/// <reference path="./subjects/Cpp.ts" />
+/// <reference path="./subjects/Java.ts" />
+/// <reference path="./subjects/React.ts" />
 
-// Create two students
-const student1: Student = {
-  firstName: "Alice",
-  lastName: "Johnson",
-  age: 22,
-  location: "New York",
+export const cpp = new Cpp();
+export const java = new Java();
+export const react = new React();
+
+export const cTeacher: Teacher = {
+  firstName: "John",
+  lastName: "Doe",
+  experienceTeachingC: 10,
 };
 
-const student2: Student = {
-  firstName: "Bob",
-  lastName: "Smith",
-  age: 25,
-  location: "Los Angeles",
-};
+console.log("C++");
+cpp.setTeacher(cTeacher);
+console.log(cpp.getRequirements());
+console.log(cpp.getAvailableTeacher());
 
-// Create an array of students
-const studentsList: Student[] = [student1, student2];
+console.log("Java");
+java.setTeacher(cTeacher);
+console.log(java.getRequirements());
+console.log(java.getAvailableTeacher());
 
-// Create table elements
-const table: HTMLTableElement = document.createElement("table");
-const tbody: HTMLTableSectionElement = document.createElement("tbody");
-
-// Loop through students and add rows
-studentsList.forEach((student: Student): void => {
-  const row: HTMLTableRowElement = document.createElement("tr");
-
-  const nameCell: HTMLTableCellElement = document.createElement("td");
-  nameCell.textContent = student.firstName;
-
-  const locationCell: HTMLTableCellElement = document.createElement("td");
-  locationCell.textContent = student.location;
-
-  row.appendChild(nameCell);
-  row.appendChild(locationCell);
-  tbody.appendChild(row);
-});
-
-// Append to document
-table.appendChild(tbody);
-document.body.appendChild(table);
+console.log("React");
+react.setTeacher(cTeacher);
+console.log(react.getRequirements());
+console.log(react.getAvailableTeacher());
