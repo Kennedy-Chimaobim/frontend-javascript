@@ -4,9 +4,10 @@ interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [propName: string]: any; // allow extra props
+  [propName: string]: any; // allows extra attributes
 }
 
+// Example usage
 const teacher3: Teacher = {
   firstName: 'John',
   fullTimeEmployee: false,
